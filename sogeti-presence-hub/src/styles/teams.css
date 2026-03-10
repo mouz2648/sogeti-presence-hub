@@ -1,0 +1,735 @@
+/* ================================= */
+/* GLOBAL */
+/* ================================= */
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  background: #f3f2f1;
+}
+
+/* ================================= */
+/* ROOT LAYOUT */
+/* ================================= */
+
+.teams-root {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+}
+
+/* ================================= */
+/* LEFT RAIL */
+/* ================================= */
+
+.teams-rail {
+  width: 68px;
+  background: #2b2c33;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 10px;
+}
+
+.teams-rail-logo {
+  color: white;
+  font-weight: 700;
+  font-size: 18px;
+  margin-bottom: 25px;
+}
+
+.teams-rail-icons {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.rail-icon {
+  width: 40px;
+  height: 40px;
+  font-size: 22px;
+  color: white;
+  opacity: 0.7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.rail-icon:hover {
+  background: rgba(255,255,255,0.08);
+  opacity: 1;
+}
+
+.rail-icon.active {
+  border-left: 3px solid #6264A7;
+  padding-left: 5px;
+  opacity: 1;
+}
+
+/* ================================= */
+/* CHANNEL PANEL */
+/* ================================= */
+
+.teams-panel {
+  width: 260px;
+  background: #f5f5f5;
+  border-right: 1px solid #e1e1e1;
+  padding: 18px;
+}
+
+.teams-panel-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.team {
+  margin-bottom: 20px;
+}
+
+.team-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+}
+
+.team-avatar {
+  width: 24px;
+  height: 24px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 12px;
+}
+
+.green {
+  background: #107c41;
+}
+
+.orange {
+  background: #d83b01;
+}
+
+.team-channel {
+  margin-left: 32px;
+  margin-top: 6px;
+  padding: 5px 8px;
+  border-radius: 4px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.team-channel:hover {
+  background: #eaeaea;
+}
+
+.team-channel.active {
+  background: #e5e5e5;
+}
+
+/* ================================= */
+/* MAIN AREA */
+/* ================================= */
+
+.teams-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ================================= */
+/* HEADER */
+/* ================================= */
+
+.teams-header {
+  height: 50px;
+  background: #2b2c33;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 22px;
+}
+
+.teams-header-left {
+  font-weight: 600;
+}
+
+.teams-search-wrapper {
+  display: flex;
+  align-items: center;
+  background: #3b3c42;
+  padding: 6px 10px;
+  border-radius: 4px;
+}
+
+.teams-search-input {
+  border: none;
+  outline: none;
+  background: transparent;
+  color: white;
+  margin-left: 6px;
+}
+
+.teams-header-right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.teams-header-icon {
+  cursor: pointer;
+}
+
+.teams-user-avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #6264A7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+}
+
+/* ================================= */
+/* CONTENT */
+/* ================================= */
+
+.teams-content {
+  padding: 28px;
+  overflow-y: auto;
+}
+
+.page-title {
+  font-size: 28px;
+  margin-bottom: 22px;
+}
+
+/* ================================= */
+/* PRESENCE LIST */
+/* ================================= */
+
+.presence-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* ================================= */
+/* PRESENCE ROW */
+/* ================================= */
+
+.presence-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.presence-row:hover {
+  background: #f0f0f0;
+}
+
+/* ================================= */
+/* AVATAR */
+/* ================================= */
+
+.presence-avatar {
+  position: relative;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #6264A7;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* ================================= */
+/* STATUS DOT */
+/* ================================= */
+
+.presence-status {
+  position: absolute;
+  bottom: -2px;
+  right: -2px;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  border: 2px solid white;
+}
+
+.presence-status.office {
+  background: #16c60c;
+}
+
+.presence-status.remote {
+  background: #ffaa44;
+}
+
+.presence-status.client {
+  background: #0078d4;
+}
+
+.presence-status.offline {
+  background: #888;
+}
+
+/* ================================= */
+/* USER INFO */
+/* ================================= */
+
+.presence-user {
+  display: flex;
+  flex-direction: column;
+}
+
+.presence-name {
+  font-weight: 600;
+}
+
+.presence-role {
+  font-size: 12px;
+  color: #666;
+}
+
+/* ================================= */
+/* MODAL (POPUP) */
+/* ================================= */
+
+.presence-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.presence-modal-box {
+  background: white;
+  padding: 28px;
+  border-radius: 10px;
+  width: 320px;
+}
+
+.presence-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.presence-buttons button {
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  background: #6264A7;
+  color: white;
+  cursor: pointer;
+}
+
+.presence-buttons button:hover {
+  background: #5356a3;
+}
+
+/* ============================== */
+/* TEAMS PRESENCE POPUP */
+/* ============================== */
+
+.presence-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+.presence-modal-card {
+
+  width: 360px;
+  background: white;
+  border-radius: 10px;
+  padding: 22px;
+  box-shadow: 0 12px 35px rgba(0,0,0,0.2);
+
+}
+
+.presence-modal-header {
+  display: flex;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.presence-modal-icon {
+
+  width: 40px;
+  height: 40px;
+  background: #6264A7;
+  border-radius: 8px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: white;
+  font-size: 18px;
+
+}
+
+.presence-modal-title {
+
+  font-size: 18px;
+  font-weight: 600;
+
+}
+
+.presence-modal-subtitle {
+
+  font-size: 13px;
+  color: #666;
+
+}
+
+.presence-modal-options {
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+}
+
+.presence-option {
+
+  padding: 12px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+}
+
+.presence-option.office {
+
+  background: #e8f6ea;
+  color: #107c41;
+
+}
+
+.presence-option.remote {
+
+  background: #fff4e5;
+  color: #d83b01;
+
+}
+
+.presence-option.client {
+
+  background: #e5f1fb;
+  color: #0078d4;
+
+}
+
+.presence-option:hover {
+
+  filter: brightness(0.95);
+
+}
+
+.presence-grid {
+
+  display: grid;
+
+  grid-template-columns: repeat(auto-fill, minmax(220px,1fr));
+
+  gap: 16px;
+
+  margin-top: 20px;
+
+}
+
+/* ========================= */
+/* LEADER DASHBOARD */
+/* ========================= */
+
+.leader-stats {
+
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 16px;
+  margin-bottom: 30px;
+
+}
+
+.leader-stat-card {
+
+  background: white;
+  border-radius: 8px;
+  padding: 18px;
+
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+
+}
+
+.leader-stat-number {
+
+  font-size: 28px;
+  font-weight: 700;
+
+}
+
+.leader-stat-label {
+
+  font-size: 13px;
+  color: #666;
+
+}
+
+.leader-stat-card.danger {
+
+  border-left: 4px solid #d83b01;
+
+}
+
+.leader-section {
+
+  margin-top: 30px;
+
+}
+
+.leader-section h2 {
+
+  margin-bottom: 12px;
+
+}
+
+/* ===================== */
+/* ADMIN DASHBOARD */
+/* ===================== */
+
+.admin-stats {
+
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 16px;
+  margin-bottom: 30px;
+
+}
+
+.admin-card {
+
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+
+}
+
+.admin-number {
+
+  font-size: 32px;
+  font-weight: 700;
+
+}
+
+.admin-label {
+
+  color: #666;
+  font-size: 13px;
+
+}
+
+.admin-chart {
+
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+
+}
+
+/* ======================= */
+/* PRESENCE LAYOUT */
+/* ======================= */
+
+.presence-layout {
+
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 20px;
+
+}
+
+.presence-sidebar {
+
+  background: white;
+  padding: 16px;
+  border-radius: 8px;
+
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+
+}
+
+/* ======================= */
+/* STATUS UPDATE BAR */
+/* ======================= */
+
+.status-bar {
+
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+
+}
+
+.status-bar button {
+
+  background: #6264A7;
+  border: none;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+
+}
+
+.status-bar button:hover {
+
+  background: #5154a3;
+
+}
+
+/* ======================= */
+/* PRESENCE LAYOUT */
+/* ======================= */
+
+.presence-layout {
+
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 20px;
+
+}
+
+.presence-sidebar {
+
+  background: white;
+  padding: 16px;
+  border-radius: 8px;
+
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+
+}
+
+.presence-main {
+  width: 100%;
+}
+
+/* ======================= */
+/* STATUS UPDATE BAR */
+/* ======================= */
+
+.status-bar {
+
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+
+}
+
+.status-bar button {
+
+  background: #6264A7;
+  border: none;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+
+}
+
+.status-bar button:hover {
+
+  background: #5154a3;
+
+}
+
+/* STATUS CHANGE BAR */
+
+.status-bar {
+
+  background: white;
+  padding: 16px;
+  border-radius: 8px;
+
+  margin-bottom: 20px;
+
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+
+}
+
+.status-text {
+
+  font-weight: 600;
+  margin-bottom: 10px;
+
+}
+
+.status-buttons {
+
+  display: flex;
+  gap: 10px;
+
+}
+
+.status-btn {
+
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+
+  color: white;
+  cursor: pointer;
+
+}
+
+.status-btn.office {
+  background: #107c41;
+}
+
+.status-btn.remote {
+  background: #d83b01;
+}
+
+.status-btn.client {
+  background: #0078d4;
+}
+
+.status-btn:hover {
+  opacity: 0.9;
+}

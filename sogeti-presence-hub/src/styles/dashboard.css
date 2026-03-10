@@ -1,0 +1,305 @@
+.presence-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 320px;
+  gap: 20px;
+  align-items: start;
+}
+
+.presence-main,
+.presence-sidebar,
+.admin-container {
+  width: 100%;
+}
+
+.status-bar-card,
+.chart-card,
+.dashboard-sidebar-card,
+.dashboard-section,
+.presence-card {
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.status-bar-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  margin-bottom: 18px;
+  flex-wrap: wrap;
+}
+
+.status-bar-label {
+  font-weight: 600;
+}
+
+.status-bar-buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.presence-stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.presence-card {
+  padding: 20px;
+}
+
+.number {
+  font-size: 34px;
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.chart-card,
+.dashboard-section,
+.dashboard-sidebar-card {
+  padding: 18px;
+  margin-bottom: 18px;
+}
+
+.dashboard-sidebar-card {
+  min-height: 280px;
+  position: sticky;
+  top: 20px;
+}
+
+.activity-list {
+  list-style: disc;
+  padding-left: 18px;
+  margin: 0;
+}
+
+.activity-item {
+  margin-bottom: 14px;
+}
+
+.activity-time {
+  color: #666;
+  font-size: 12px;
+}
+
+.popup-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.42);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5000;
+}
+
+.popup-card {
+  width: 380px;
+  background: #fff;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.22);
+}
+
+.popup-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 18px;
+  flex-wrap: wrap;
+}
+
+.dashboard-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.heatmap-grid {
+  display: grid;
+  grid-template-columns: repeat(10, 18px);
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.heat-cell {
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
+}
+
+.heat-empty {
+  background: #edf2f7;
+}
+
+.heat-low {
+  background: #d9f2de;
+}
+
+.heat-medium {
+  background: #9fdaa9;
+}
+
+.heat-high {
+  background: #4cb96a;
+}
+
+.heat-peak {
+  background: #0f7c3a;
+}
+
+.office-roster {
+  display: grid;
+  gap: 12px;
+}
+
+.office-roster-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 0;
+  border-bottom: 1px solid #ececec;
+}
+
+.office-roster-row:last-child {
+  border-bottom: none;
+}
+
+.office-roster-person {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.office-roster-avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #6264a7;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+}
+
+.office-roster-name {
+  font-weight: 600;
+}
+
+.office-roster-status {
+  color: #666;
+  font-size: 13px;
+}
+
+.emergency-toolbar {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.emergency-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin: 14px 0 18px;
+}
+
+.emergency-metric {
+  background: #f7f8fb;
+  border-radius: 10px;
+  padding: 16px;
+}
+
+.metric-number {
+  display: block;
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+@media (max-width: 1100px) {
+  .presence-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-sidebar-card {
+    position: static;
+  }
+
+  .presence-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .emergency-metrics {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 700px) {
+  .presence-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .heatmap-grid {
+    grid-template-columns: repeat(6, 18px);
+  }
+}
+
+.presence-capacity {
+
+  background: white;
+  padding: 16px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.capacity-meter {
+
+  font-size: 22px;
+  font-weight: 700;
+
+}
+
+.office-list {
+
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+}
+
+.office-user {
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+}
+
+.office-avatar {
+
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+
+  background: #6264A7;
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-weight: 600;
+
+}
